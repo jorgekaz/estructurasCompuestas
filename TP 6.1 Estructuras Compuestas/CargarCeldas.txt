@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct
+{
+    char tipo[30];
+    int monto;    
+}stInversion;
+
+typedef struct
+{
+    stInversion inversion;
+    struct nodo* siguiente;    
+} nodo;
+
+typedef struct 
+{ 
+    int id;
+    int edad:
+    char nombre[30];    
+}stPersona;
+
+typedef struct
+{    
+    stPersona persona;
+    nodo* listaInversiones;
+} stCelda;
+
+#define ESC 27
+
+int preguntarUsuario()
+{
+    printf("desea continuar? \n");
+    printf("presione cualquier tecla para continuar \n");
+    printf("presione ESC para salir \n");
+    
+    fflush(stdin);
+    int tecla = getch();
+    
+    /// ? if 
+    /// : else
+    return tecla == ESC ? 0 : 1;
+}
+
+stCelda cargarCelda(int id)
+{
+    /// creamos una persona
+    stPersona persona;
+    
+    /// cargamos los datos
+    persona.id = id;
+    
+    printf("ingrese su edad \n");
+    fflush(stdin);
+    scanf("%i", &persona.edad);
+    
+    printf("ingrese su nombre \n");
+    fflush(stdin);
+    gets(persona.nombre);
+    
+    stCelda celda;
+    celda.persona = cargarPersona();
+    celda.listaInversiones = inicLista();
+    
+    return celda;
+}
+
+int cargarCeldas(stCeldas celdas[30], int dimension)
+{
+    int validos = 0;
+    int continuar = 1;
+        
+    for(int i = 0; i < dimension && continuar == 1; i++)
+    {
+        celda[i] = cargarCelda(i);    
+        
+        continuar = preguntarUsuario();
+    }
+    
+    return validos;
+}
+
+
+int main()
+{
+    stCelda celdas[30];
+    celdas[0].persona.id;
+    celdas[0].listaInversiones = inicLista();
+    
+    return 0;
+}

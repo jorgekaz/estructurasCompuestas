@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1668377640 source:d:\tecnicatura en programacion\2do cuatrimestre\programacion y laboratorio ii\trabajos practicos\tp 6.1 estructuras compuestas v2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
